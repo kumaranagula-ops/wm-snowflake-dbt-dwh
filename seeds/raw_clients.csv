@@ -1,0 +1,7 @@
+client_id,first_name,last_name,city,risk_profile,onboarded_date,updated_at
+1,Aarav,Shah,Mumbai,MODERATE,2019-04-12,2026-09-01 09:00:00
+2,Diya,Iyer,Bangalore,AGGRESSIVE,2020-08-01,2026-09-01 09:00:00
+3,Rohan,Mehta,Pune,CONSERVATIVE,2018-01-23,2026-09-01 09:00:00
+4,Ananya,Rao,Hyderabad,MODERATE,2021-11-05,2026-09-01 09:00:00
+5,Kabir,Nair,Chennai,AGGRESSIVE,2022-03-17,2026-09-01 09:00:00
+6,Isha,Kapoor,Delhi,CONSERVATIVE,2017-06-30,2026-09-01 09:00:00
