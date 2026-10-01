@@ -1,0 +1,53 @@
+name: dbt-snowflake
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+  SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+  SNOWFLAKE_PRIVATE_KEY_PATH: ${{ github.workspace }}/rsa_key.p8
+  DBT_PROFILES_DIR: ci
+
+jobs:
+  ci:
+    # PR -> build everything into an isolated CI_<pr> schema set, test, then drop it
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    env:
+      DBT_CI_SCHEMA: CI_${{ github.event.pull_request.number }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -r requirements.txt
+      - name: Write private key
+        run: |
+          printf '%s\n' "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > rsa_key.p8
+          chmod 600 rsa_key.p8
+      - run: dbt debug --target ci
+      - run: dbt build --target ci
+      - name: Drop CI schemas
+        if: always()
+        run: dbt run-operation drop_schemas_with_prefix --args "{prefix: $DBT_CI_SCHEMA}" --target ci
+
+  prod:
+    # merge to main (or manual run) -> build into PROD schemas
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -r requirements.txt
+      - name: Write private key
+        run: |
+          printf '%s\n' "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > rsa_key.p8
+          chmod 600 rsa_key.p8
+      - run: dbt seed --target prod
+      - run: dbt snapshot --target prod
+      - run: dbt build --target prod --exclude resource_type:seed resource_type:snapshot
