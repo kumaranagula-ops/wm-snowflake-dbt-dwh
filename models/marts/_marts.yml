@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: dim_client
+    description: SCD2 client dimension (one row per client version).
+    columns:
+      - name: client_sk
+        data_tests: [unique, not_null]
+      - name: client_id
+        data_tests: [not_null]
+
+  - name: dim_account
+    columns:
+      - name: account_id
+        data_tests: [unique, not_null]
+
+  - name: dim_security
+    columns:
+      - name: ticker
+        data_tests: [unique, not_null]
+
+  - name: dim_date
+    columns:
+      - name: date_key
+        data_tests: [unique, not_null]
+
+  - name: fct_transactions
+    description: Grain = one trade (txn_id). Incremental MERGE.
+    columns:
+      - name: txn_id
+        data_tests: [unique, not_null]
+      - name: client_sk
+        description: Client version valid at trade time.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_client'), field: client_sk}
+      - name: date_key
+        data_tests:
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+
+  - name: fct_daily_positions
+    description: Grain = account x ticker x position_date.
+    columns:
+      - name: quantity_held
+        data_tests: [not_null]
+      - name: market_value
+        data_tests: [not_null]
+
+  - name: rpt_client_aum_daily
+    description: Client AUM by day and asset class (secure view).
+
+  - name: dt_account_cash_balance
+    description: Dynamic table, refreshed by Snowflake on target_lag.
+    columns:
+      - name: account_id
+        data_tests: [unique, not_null]
