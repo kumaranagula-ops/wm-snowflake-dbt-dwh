@@ -1,0 +1,37 @@
+name: wm_micro
+version: "1.0.0"
+config-version: 2
+require-dbt-version: [">=1.10.0", "<2.0.0"]
+profile: wm_micro
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # incremental lookback window (days) for late-arriving transactions
+  lookback_days: 3
+
+seeds:
+  wm_micro:
+    +schema: raw
+    +quote_columns: false
+
+models:
+  wm_micro:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table
+      +transient: false
+
+snapshots:
+  wm_micro:
+    +schema: snapshots        # dbt >= 1.9: honours generate_schema_name (DEV_SNAPSHOTS, CI_x_SNAPSHOTS, SNAPSHOTS)

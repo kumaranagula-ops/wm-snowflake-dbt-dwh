@@ -1,0 +1,18 @@
+# Copy to ~/.dbt/profiles.yml  (or keep next to dbt_project.yml and run with --profiles-dir .)
+# Uses key-pair auth because MFA-enforced users cannot use password auth non-interactively.
+wm_micro:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"          # e.g. abc12345.ap-south-1  or  ORG-ACCOUNT
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH', '~/.snowflake/rsa_key.p8') }}"
+      private_key_passphrase: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PASSPHRASE', '') }}"
+      role: WM_TRANSFORMER
+      warehouse: WM_WH
+      database: WM_MICRO
+      schema: DEV
+      threads: 4
+      client_session_keep_alive: false
+      query_tag: dbt_wm_micro
