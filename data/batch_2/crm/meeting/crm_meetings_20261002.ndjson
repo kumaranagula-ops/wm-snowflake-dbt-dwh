@@ -1,0 +1,10 @@
+{"meeting_id": 30101, "client_id": 1017, "advisor_id": 202, "meeting_ts": "2026-09-28T13:00:50", "channel": "VIDEO", "topics": ["RISK_PROFILING"]}
+{"meeting_id": 30102, "client_id": 1028, "advisor_id": 207, "meeting_ts": "2026-09-28T17:00:06", "channel": "IN_PERSON", "topics": ["RISK_PROFILING", "TAX_PLANNING"]}
+{"meeting_id": 30103, "client_id": 1004, "advisor_id": 207, "meeting_ts": "2026-09-29T13:00:06", "channel": "IN_PERSON", "topics": ["PORTFOLIO_REVIEW", "TAX_PLANNING"]}
+{"meeting_id": 30104, "client_id": 1034, "advisor_id": 203, "meeting_ts": "2026-09-29T10:00:51", "channel": "IN_PERSON", "topics": ["RISK_PROFILING", "NEW_PRODUCT", "SIP_SETUP"]}
+{"meeting_id": 30105, "client_id": 1012, "advisor_id": 208, "meeting_ts": "2026-09-30T15:00:36", "channel": "IN_PERSON", "topics": ["PORTFOLIO_REVIEW", "ESTATE_PLANNING"]}
+{"meeting_id": 30106, "client_id": 1025, "advisor_id": 202, "meeting_ts": "2026-10-01T17:00:08", "channel": "IN_PERSON", "topics": ["PORTFOLIO_REVIEW", "RISK_PROFILING"]}
+{"meeting_id": 30107, "client_id": 1029, "advisor_id": 201, "meeting_ts": "2026-10-01T10:00:38", "channel": "PHONE", "topics": ["SIP_SETUP", "RISK_PROFILING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30108, "client_id": 1004, "advisor_id": 207, "meeting_ts": "2026-10-02T13:00:55", "channel": "VIDEO", "topics": ["ESTATE_PLANNING", "PORTFOLIO_REVIEW", "SIP_SETUP"]}
+{"meeting_id": 30109, "client_id": 1008, "advisor_id": 208, "meeting_ts": "2026-10-02T14:00:03", "channel": "VIDEO", "topics": ["ESTATE_PLANNING", "SIP_SETUP"]}
+{"meeting_id": 30110, "client_id": 1011, "advisor_id": 205, "meeting_ts": "2026-10-02T16:00:16", "channel": "IN_PERSON", "topics": ["PORTFOLIO_REVIEW", "ESTATE_PLANNING", "NEW_PRODUCT"]}

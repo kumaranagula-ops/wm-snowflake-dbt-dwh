@@ -1,0 +1,100 @@
+{"meeting_id": 30001, "client_id": 1019, "advisor_id": 205, "meeting_ts": "2026-08-03T15:00:14", "channel": "VIDEO", "topics": ["NEW_PRODUCT", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30002, "client_id": 1020, "advisor_id": 208, "meeting_ts": "2026-08-03T12:00:43", "channel": "PHONE", "topics": ["TAX_PLANNING"]}
+{"meeting_id": 30003, "client_id": 1034, "advisor_id": 203, "meeting_ts": "2026-08-04T13:00:53", "channel": "VIDEO", "topics": ["ESTATE_PLANNING", "NEW_PRODUCT", "SIP_SETUP"]}
+{"meeting_id": 30004, "client_id": 1036, "advisor_id": 207, "meeting_ts": "2026-08-04T16:00:16", "channel": "VIDEO", "topics": ["SIP_SETUP", "RISK_PROFILING", "ESTATE_PLANNING"]}
+{"meeting_id": 30005, "client_id": 1004, "advisor_id": 207, "meeting_ts": "2026-08-05T17:00:29", "channel": "PHONE", "topics": ["RISK_PROFILING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30006, "client_id": 1011, "advisor_id": 206, "meeting_ts": "2026-08-05T13:00:47", "channel": "PHONE", "topics": ["ESTATE_PLANNING", "TAX_PLANNING"]}
+{"meeting_id": 30007, "client_id": 1018, "advisor_id": 204, "meeting_ts": "2026-08-05T14:00:17", "channel": "PHONE", "topics": ["TAX_PLANNING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30008, "client_id": 1020, "advisor_id": 208, "meeting_ts": "2026-08-05T17:00:40", "channel": "PHONE", "topics": ["NEW_PRODUCT", "PORTFOLIO_REVIEW", "SIP_SETUP"]}
+{"meeting_id": 30009, "client_id": 1029, "advisor_id": 201, "meeting_ts": "2026-08-05T16:00:26", "channel": "VIDEO", "topics": ["SIP_SETUP"]}
+{"meeting_id": 30010, "client_id": 1037, "advisor_id": 201, "meeting_ts": "2026-08-05T14:00:46", "channel": "PHONE", "topics": ["SIP_SETUP"]}
+{"meeting_id": 30011, "client_id": 1028, "advisor_id": 207, "meeting_ts": "2026-08-06T11:00:08", "channel": "PHONE", "topics": ["SIP_SETUP", "NEW_PRODUCT"]}
+{"meeting_id": 30012, "client_id": 1035, "advisor_id": 206, "meeting_ts": "2026-08-06T11:00:29", "channel": "VIDEO", "topics": ["PORTFOLIO_REVIEW", "TAX_PLANNING"]}
+{"meeting_id": 30013, "client_id": 1014, "advisor_id": 204, "meeting_ts": "2026-08-10T15:00:08", "channel": "PHONE", "topics": ["NEW_PRODUCT", "RISK_PROFILING"]}
+{"meeting_id": 30014, "client_id": 1024, "advisor_id": 207, "meeting_ts": "2026-08-10T17:00:33", "channel": "VIDEO", "topics": ["ESTATE_PLANNING"]}
+{"meeting_id": 30015, "client_id": 1025, "advisor_id": 202, "meeting_ts": "2026-08-10T12:00:36", "channel": "PHONE", "topics": ["PORTFOLIO_REVIEW", "NEW_PRODUCT", "SIP_SETUP"]}
+{"meeting_id": 30016, "client_id": 1016, "advisor_id": 207, "meeting_ts": "2026-08-11T13:00:33", "channel": "PHONE", "topics": ["RISK_PROFILING"]}
+{"meeting_id": 30017, "client_id": 1020, "advisor_id": 208, "meeting_ts": "2026-08-12T13:00:26", "channel": "PHONE", "topics": ["RISK_PROFILING", "NEW_PRODUCT"]}
+{"meeting_id": 30018, "client_id": 1023, "advisor_id": 206, "meeting_ts": "2026-08-12T15:00:23", "channel": "VIDEO", "topics": ["RISK_PROFILING", "NEW_PRODUCT"]}
+{"meeting_id": 30019, "client_id": 1032, "advisor_id": 208, "meeting_ts": "2026-08-12T12:00:25", "channel": "PHONE", "topics": ["SIP_SETUP", "ESTATE_PLANNING", "RISK_PROFILING"]}
+{"meeting_id": 30020, "client_id": 1034, "advisor_id": 203, "meeting_ts": "2026-08-12T17:00:26", "channel": "IN_PERSON", "topics": ["ESTATE_PLANNING"]}
+{"meeting_id": 30021, "client_id": 1018, "advisor_id": 204, "meeting_ts": "2026-08-13T16:00:26", "channel": "PHONE", "topics": ["RISK_PROFILING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30022, "client_id": 1023, "advisor_id": 206, "meeting_ts": "2026-08-13T12:00:55", "channel": "VIDEO", "topics": ["RISK_PROFILING"]}
+{"meeting_id": 30023, "client_id": 1032, "advisor_id": 208, "meeting_ts": "2026-08-13T17:00:55", "channel": "VIDEO", "topics": ["TAX_PLANNING", "NEW_PRODUCT"]}
+{"meeting_id": 30024, "client_id": 1010, "advisor_id": 203, "meeting_ts": "2026-08-14T11:00:24", "channel": "VIDEO", "topics": ["ESTATE_PLANNING"]}
+{"meeting_id": 30025, "client_id": 1032, "advisor_id": 208, "meeting_ts": "2026-08-14T16:00:39", "channel": "PHONE", "topics": ["TAX_PLANNING", "SIP_SETUP"]}
+{"meeting_id": 30026, "client_id": 1033, "advisor_id": 201, "meeting_ts": "2026-08-14T13:00:43", "channel": "IN_PERSON", "topics": ["RISK_PROFILING", "TAX_PLANNING", "ESTATE_PLANNING"]}
+{"meeting_id": 30027, "client_id": 1038, "advisor_id": 204, "meeting_ts": "2026-08-14T12:00:15", "channel": "PHONE", "topics": ["NEW_PRODUCT", "SIP_SETUP", "TAX_PLANNING"]}
+{"meeting_id": 30028, "client_id": 1001, "advisor_id": 201, "meeting_ts": "2026-08-17T15:00:41", "channel": "VIDEO", "topics": ["NEW_PRODUCT", "RISK_PROFILING", "SIP_SETUP"]}
+{"meeting_id": 30029, "client_id": 1008, "advisor_id": 208, "meeting_ts": "2026-08-17T17:00:44", "channel": "PHONE", "topics": ["RISK_PROFILING"]}
+{"meeting_id": 30030, "client_id": 1013, "advisor_id": 202, "meeting_ts": "2026-08-17T10:00:07", "channel": "IN_PERSON", "topics": ["RISK_PROFILING", "SIP_SETUP"]}
+{"meeting_id": 30031, "client_id": 1022, "advisor_id": 203, "meeting_ts": "2026-08-17T17:00:46", "channel": "PHONE", "topics": ["RISK_PROFILING", "TAX_PLANNING"]}
+{"meeting_id": 30032, "client_id": 1003, "advisor_id": 205, "meeting_ts": "2026-08-18T11:00:38", "channel": "VIDEO", "topics": ["PORTFOLIO_REVIEW", "RISK_PROFILING"]}
+{"meeting_id": 30033, "client_id": 1028, "advisor_id": 207, "meeting_ts": "2026-08-18T17:00:13", "channel": "VIDEO", "topics": ["TAX_PLANNING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30034, "client_id": 1001, "advisor_id": 201, "meeting_ts": "2026-08-19T16:00:50", "channel": "PHONE", "topics": ["SIP_SETUP"]}
+{"meeting_id": 30035, "client_id": 1020, "advisor_id": 208, "meeting_ts": "2026-08-19T15:00:18", "channel": "VIDEO", "topics": ["PORTFOLIO_REVIEW", "RISK_PROFILING"]}
+{"meeting_id": 30036, "client_id": 1026, "advisor_id": 203, "meeting_ts": "2026-08-19T17:00:52", "channel": "PHONE", "topics": ["ESTATE_PLANNING", "SIP_SETUP", "RISK_PROFILING"]}
+{"meeting_id": 30037, "client_id": 1030, "advisor_id": 204, "meeting_ts": "2026-08-19T10:00:02", "channel": "PHONE", "topics": ["PORTFOLIO_REVIEW", "SIP_SETUP"]}
+{"meeting_id": 30038, "client_id": 1035, "advisor_id": 206, "meeting_ts": "2026-08-19T14:00:43", "channel": "PHONE", "topics": ["SIP_SETUP"]}
+{"meeting_id": 30039, "client_id": 1032, "advisor_id": 208, "meeting_ts": "2026-08-20T15:00:47", "channel": "PHONE", "topics": ["NEW_PRODUCT", "TAX_PLANNING"]}
+{"meeting_id": 30040, "client_id": 1023, "advisor_id": 206, "meeting_ts": "2026-08-21T17:00:02", "channel": "PHONE", "topics": ["NEW_PRODUCT", "PORTFOLIO_REVIEW", "SIP_SETUP"]}
+{"meeting_id": 30041, "client_id": 1025, "advisor_id": 202, "meeting_ts": "2026-08-21T10:00:51", "channel": "PHONE", "topics": ["RISK_PROFILING", "SIP_SETUP", "NEW_PRODUCT"]}
+{"meeting_id": 30042, "client_id": 1035, "advisor_id": 206, "meeting_ts": "2026-08-21T13:00:56", "channel": "VIDEO", "topics": ["TAX_PLANNING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30043, "client_id": 1004, "advisor_id": 207, "meeting_ts": "2026-08-24T12:00:33", "channel": "VIDEO", "topics": ["TAX_PLANNING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30044, "client_id": 1023, "advisor_id": 206, "meeting_ts": "2026-08-24T11:00:14", "channel": "PHONE", "topics": ["RISK_PROFILING"]}
+{"meeting_id": 30045, "client_id": 1031, "advisor_id": 205, "meeting_ts": "2026-08-25T13:00:25", "channel": "PHONE", "topics": ["ESTATE_PLANNING", "SIP_SETUP", "NEW_PRODUCT"]}
+{"meeting_id": 30046, "client_id": 1036, "advisor_id": 207, "meeting_ts": "2026-08-25T16:00:49", "channel": "VIDEO", "topics": ["SIP_SETUP", "TAX_PLANNING"]}
+{"meeting_id": 30047, "client_id": 1001, "advisor_id": 201, "meeting_ts": "2026-08-26T17:00:59", "channel": "PHONE", "topics": ["ESTATE_PLANNING", "PORTFOLIO_REVIEW", "SIP_SETUP"]}
+{"meeting_id": 30048, "client_id": 1031, "advisor_id": 205, "meeting_ts": "2026-08-26T14:00:24", "channel": "PHONE", "topics": ["PORTFOLIO_REVIEW", "RISK_PROFILING"]}
+{"meeting_id": 30049, "client_id": 1034, "advisor_id": 203, "meeting_ts": "2026-08-26T17:00:59", "channel": "IN_PERSON", "topics": ["PORTFOLIO_REVIEW", "RISK_PROFILING"]}
+{"meeting_id": 30050, "client_id": 1035, "advisor_id": 206, "meeting_ts": "2026-08-28T16:00:23", "channel": "VIDEO", "topics": ["RISK_PROFILING", "TAX_PLANNING"]}
+{"meeting_id": 30051, "client_id": 1015, "advisor_id": 206, "meeting_ts": "2026-08-31T11:00:06", "channel": "VIDEO", "topics": ["TAX_PLANNING", "NEW_PRODUCT", "ESTATE_PLANNING"]}
+{"meeting_id": 30052, "client_id": 1027, "advisor_id": 205, "meeting_ts": "2026-08-31T12:00:33", "channel": "PHONE", "topics": ["RISK_PROFILING", "SIP_SETUP"]}
+{"meeting_id": 30053, "client_id": 1030, "advisor_id": 204, "meeting_ts": "2026-08-31T16:00:40", "channel": "PHONE", "topics": ["SIP_SETUP"]}
+{"meeting_id": 30054, "client_id": 1033, "advisor_id": 201, "meeting_ts": "2026-08-31T11:00:22", "channel": "VIDEO", "topics": ["SIP_SETUP", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30055, "client_id": 1002, "advisor_id": 204, "meeting_ts": "2026-09-01T16:00:01", "channel": "PHONE", "topics": ["TAX_PLANNING", "RISK_PROFILING"]}
+{"meeting_id": 30056, "client_id": 1035, "advisor_id": 206, "meeting_ts": "2026-09-01T13:00:49", "channel": "IN_PERSON", "topics": ["PORTFOLIO_REVIEW", "NEW_PRODUCT", "SIP_SETUP"]}
+{"meeting_id": 30057, "client_id": 1040, "advisor_id": 208, "meeting_ts": "2026-09-01T16:00:20", "channel": "IN_PERSON", "topics": ["NEW_PRODUCT", "RISK_PROFILING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30058, "client_id": 1004, "advisor_id": 207, "meeting_ts": "2026-09-02T11:00:05", "channel": "IN_PERSON", "topics": ["NEW_PRODUCT"]}
+{"meeting_id": 30059, "client_id": 1006, "advisor_id": 203, "meeting_ts": "2026-09-02T13:00:21", "channel": "VIDEO", "topics": ["SIP_SETUP", "NEW_PRODUCT", "TAX_PLANNING"]}
+{"meeting_id": 30060, "client_id": 1016, "advisor_id": 207, "meeting_ts": "2026-09-02T11:00:06", "channel": "PHONE", "topics": ["RISK_PROFILING"]}
+{"meeting_id": 30061, "client_id": 1036, "advisor_id": 207, "meeting_ts": "2026-09-02T12:00:29", "channel": "PHONE", "topics": ["TAX_PLANNING"]}
+{"meeting_id": 30062, "client_id": 1028, "advisor_id": 207, "meeting_ts": "2026-09-03T13:00:37", "channel": "IN_PERSON", "topics": ["NEW_PRODUCT", "SIP_SETUP", "TAX_PLANNING"]}
+{"meeting_id": 30063, "client_id": 1020, "advisor_id": 208, "meeting_ts": "2026-09-04T16:00:31", "channel": "IN_PERSON", "topics": ["NEW_PRODUCT", "TAX_PLANNING"]}
+{"meeting_id": 30064, "client_id": 1029, "advisor_id": 201, "meeting_ts": "2026-09-04T15:00:39", "channel": "IN_PERSON", "topics": ["TAX_PLANNING", "NEW_PRODUCT"]}
+{"meeting_id": 30065, "client_id": 1032, "advisor_id": 208, "meeting_ts": "2026-09-04T13:00:27", "channel": "VIDEO", "topics": ["SIP_SETUP"]}
+{"meeting_id": 30066, "client_id": 1008, "advisor_id": 208, "meeting_ts": "2026-09-07T16:00:11", "channel": "VIDEO", "topics": ["ESTATE_PLANNING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30067, "client_id": 1015, "advisor_id": 206, "meeting_ts": "2026-09-07T11:00:52", "channel": "VIDEO", "topics": ["ESTATE_PLANNING", "PORTFOLIO_REVIEW", "SIP_SETUP"]}
+{"meeting_id": 30068, "client_id": 1024, "advisor_id": 207, "meeting_ts": "2026-09-07T17:00:58", "channel": "VIDEO", "topics": ["SIP_SETUP", "NEW_PRODUCT", "TAX_PLANNING"]}
+{"meeting_id": 30069, "client_id": 1006, "advisor_id": 203, "meeting_ts": "2026-09-08T10:00:45", "channel": "IN_PERSON", "topics": ["SIP_SETUP", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30070, "client_id": 1009, "advisor_id": 202, "meeting_ts": "2026-09-08T10:00:05", "channel": "PHONE", "topics": ["NEW_PRODUCT", "PORTFOLIO_REVIEW", "TAX_PLANNING"]}
+{"meeting_id": 30071, "client_id": 1032, "advisor_id": 208, "meeting_ts": "2026-09-08T13:00:54", "channel": "PHONE", "topics": ["TAX_PLANNING", "SIP_SETUP", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30072, "client_id": 1020, "advisor_id": 208, "meeting_ts": "2026-09-09T14:00:03", "channel": "IN_PERSON", "topics": ["TAX_PLANNING", "NEW_PRODUCT", "SIP_SETUP"]}
+{"meeting_id": 30073, "client_id": 1028, "advisor_id": 207, "meeting_ts": "2026-09-09T14:00:59", "channel": "VIDEO", "topics": ["ESTATE_PLANNING", "PORTFOLIO_REVIEW", "TAX_PLANNING"]}
+{"meeting_id": 30074, "client_id": 1033, "advisor_id": 201, "meeting_ts": "2026-09-09T17:00:24", "channel": "PHONE", "topics": ["PORTFOLIO_REVIEW"]}
+{"meeting_id": 30075, "client_id": 1039, "advisor_id": 205, "meeting_ts": "2026-09-09T13:00:18", "channel": "IN_PERSON", "topics": ["TAX_PLANNING"]}
+{"meeting_id": 30076, "client_id": 1019, "advisor_id": 205, "meeting_ts": "2026-09-10T15:00:19", "channel": "VIDEO", "topics": ["NEW_PRODUCT"]}
+{"meeting_id": 30077, "client_id": 1026, "advisor_id": 203, "meeting_ts": "2026-09-10T12:00:21", "channel": "PHONE", "topics": ["PORTFOLIO_REVIEW", "ESTATE_PLANNING", "TAX_PLANNING"]}
+{"meeting_id": 30078, "client_id": 1035, "advisor_id": 206, "meeting_ts": "2026-09-10T12:00:12", "channel": "VIDEO", "topics": ["TAX_PLANNING", "RISK_PROFILING"]}
+{"meeting_id": 30079, "client_id": 1040, "advisor_id": 208, "meeting_ts": "2026-09-10T12:00:18", "channel": "VIDEO", "topics": ["ESTATE_PLANNING", "PORTFOLIO_REVIEW", "TAX_PLANNING"]}
+{"meeting_id": 30080, "client_id": 1017, "advisor_id": 202, "meeting_ts": "2026-09-11T16:00:51", "channel": "IN_PERSON", "topics": ["TAX_PLANNING"]}
+{"meeting_id": 30081, "client_id": 1001, "advisor_id": 201, "meeting_ts": "2026-09-14T13:00:52", "channel": "IN_PERSON", "topics": ["PORTFOLIO_REVIEW", "NEW_PRODUCT", "ESTATE_PLANNING"]}
+{"meeting_id": 30082, "client_id": 1006, "advisor_id": 203, "meeting_ts": "2026-09-14T10:00:54", "channel": "IN_PERSON", "topics": ["RISK_PROFILING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30083, "client_id": 1014, "advisor_id": 204, "meeting_ts": "2026-09-14T13:00:39", "channel": "PHONE", "topics": ["RISK_PROFILING", "PORTFOLIO_REVIEW"]}
+{"meeting_id": 30084, "client_id": 1038, "advisor_id": 204, "meeting_ts": "2026-09-15T10:00:16", "channel": "VIDEO", "topics": ["NEW_PRODUCT"]}
+{"meeting_id": 30085, "client_id": 1003, "advisor_id": 205, "meeting_ts": "2026-09-16T15:00:15", "channel": "PHONE", "topics": ["NEW_PRODUCT"]}
+{"meeting_id": 30086, "client_id": 1009, "advisor_id": 202, "meeting_ts": "2026-09-16T14:00:15", "channel": "IN_PERSON", "topics": ["ESTATE_PLANNING"]}
+{"meeting_id": 30087, "client_id": 1036, "advisor_id": 207, "meeting_ts": "2026-09-17T15:00:20", "channel": "PHONE", "topics": ["PORTFOLIO_REVIEW"]}
+{"meeting_id": 30088, "client_id": 1016, "advisor_id": 207, "meeting_ts": "2026-09-18T11:00:31", "channel": "VIDEO", "topics": ["RISK_PROFILING", "ESTATE_PLANNING"]}
+{"meeting_id": 30089, "client_id": 1021, "advisor_id": 201, "meeting_ts": "2026-09-18T10:00:36", "channel": "VIDEO", "topics": ["NEW_PRODUCT"]}
+{"meeting_id": 30090, "client_id": 1028, "advisor_id": 207, "meeting_ts": "2026-09-18T15:00:44", "channel": "PHONE", "topics": ["PORTFOLIO_REVIEW", "ESTATE_PLANNING"]}
+{"meeting_id": 30091, "client_id": 1015, "advisor_id": 206, "meeting_ts": "2026-09-21T11:00:30", "channel": "IN_PERSON", "topics": ["ESTATE_PLANNING"]}
+{"meeting_id": 30092, "client_id": 1008, "advisor_id": 208, "meeting_ts": "2026-09-22T17:00:15", "channel": "IN_PERSON", "topics": ["TAX_PLANNING"]}
+{"meeting_id": 30093, "client_id": 1020, "advisor_id": 208, "meeting_ts": "2026-09-22T10:00:13", "channel": "PHONE", "topics": ["SIP_SETUP", "TAX_PLANNING", "ESTATE_PLANNING"]}
+{"meeting_id": 30094, "client_id": 1001, "advisor_id": 201, "meeting_ts": "2026-09-24T17:00:58", "channel": "PHONE", "topics": ["RISK_PROFILING"]}
+{"meeting_id": 30095, "client_id": 1004, "advisor_id": 207, "meeting_ts": "2026-09-24T17:00:37", "channel": "PHONE", "topics": ["NEW_PRODUCT"]}
+{"meeting_id": 30096, "client_id": 1007, "advisor_id": 205, "meeting_ts": "2026-09-24T12:00:42", "channel": "VIDEO", "topics": ["ESTATE_PLANNING", "SIP_SETUP", "NEW_PRODUCT"]}
+{"meeting_id": 30097, "client_id": 1011, "advisor_id": 206, "meeting_ts": "2026-09-24T14:00:56", "channel": "PHONE", "topics": ["PORTFOLIO_REVIEW"]}
+{"meeting_id": 30098, "client_id": 1014, "advisor_id": 204, "meeting_ts": "2026-09-24T16:00:37", "channel": "PHONE", "topics": ["RISK_PROFILING", "ESTATE_PLANNING", "NEW_PRODUCT"]}
+{"meeting_id": 30099, "client_id": 1037, "advisor_id": 201, "meeting_ts": "2026-09-24T10:00:19", "channel": "IN_PERSON", "topics": ["RISK_PROFILING", "TAX_PLANNING"]}
+{"meeting_id": 30100, "client_id": 1006, "advisor_id": 203, "meeting_ts": "2026-09-25T11:00:59", "channel": "VIDEO", "topics": ["TAX_PLANNING"]}

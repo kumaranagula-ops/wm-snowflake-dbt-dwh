@@ -1,0 +1,4 @@
+client_id,first_name,last_name,email,phone,pan,date_of_birth,city,segment,risk_profile,primary_advisor_id,onboarded_date,updated_at
+1002,Diya,Gupta,diya.gupta1002@mail-example.in,+91-9492655486,UBSPG1614C,1956-02-02,Bangalore,UHNI,MODERATE,204,2017-02-02,2026-09-29 11:00:00
+1011,Arnav,Pillai,arnav.pillai1011@mail-example.in,+91-9226772164,SPFPL3490R,1965-11-11,Delhi,UHNI,AGGRESSIVE,205,2017-11-11,2026-09-29 11:05:00
+1020,Anika,Saxena,anika.saxena1020@mail-example.in,+91-9349061789,XHAPR3987J,1974-08-20,Bangalore,UHNI,AGGRESSIVE,208,2017-08-20,2026-09-30 09:30:00

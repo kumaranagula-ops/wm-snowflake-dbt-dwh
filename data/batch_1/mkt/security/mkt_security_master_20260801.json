@@ -1,0 +1,332 @@
+[
+  {
+    "ticker": "INFY",
+    "isin": "INE900X01009",
+    "name": "Infosys Ltd",
+    "asset_class": "EQUITY",
+    "sector": "IT",
+    "attributes": {
+      "face_value": 5,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "INFY"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500100"
+      }
+    ]
+  },
+  {
+    "ticker": "TCS",
+    "isin": "INE901X01019",
+    "name": "Tata Consultancy Services",
+    "asset_class": "EQUITY",
+    "sector": "IT",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "TCS"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500107"
+      }
+    ]
+  },
+  {
+    "ticker": "WIPRO",
+    "isin": "INE902X01029",
+    "name": "Wipro Ltd",
+    "asset_class": "EQUITY",
+    "sector": "IT",
+    "attributes": {
+      "face_value": 2,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "WIPRO"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500114"
+      }
+    ]
+  },
+  {
+    "ticker": "HDFCBANK",
+    "isin": "INE903X01039",
+    "name": "HDFC Bank Ltd",
+    "asset_class": "EQUITY",
+    "sector": "FINANCIALS",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "HDFCBANK"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500121"
+      }
+    ]
+  },
+  {
+    "ticker": "ICICIBANK",
+    "isin": "INE904X01049",
+    "name": "ICICI Bank Ltd",
+    "asset_class": "EQUITY",
+    "sector": "FINANCIALS",
+    "attributes": {
+      "face_value": 2,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "ICICIBANK"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500128"
+      }
+    ]
+  },
+  {
+    "ticker": "RELIANCE",
+    "isin": "INE905X01059",
+    "name": "Reliance Industries Ltd",
+    "asset_class": "EQUITY",
+    "sector": "ENERGY",
+    "attributes": {
+      "face_value": 10,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "RELIANCE"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500135"
+      }
+    ]
+  },
+  {
+    "ticker": "ITC",
+    "isin": "INE906X01069",
+    "name": "ITC Ltd",
+    "asset_class": "EQUITY",
+    "sector": "FMCG",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "ITC"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500142"
+      }
+    ]
+  },
+  {
+    "ticker": "HINDUNILVR",
+    "isin": "INE907X01079",
+    "name": "Hindustan Unilever Ltd",
+    "asset_class": "EQUITY",
+    "sector": "FMCG",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "HINDUNILVR"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500149"
+      }
+    ]
+  },
+  {
+    "ticker": "SUNPHARMA",
+    "isin": "INE908X01089",
+    "name": "Sun Pharmaceutical Industries",
+    "asset_class": "EQUITY",
+    "sector": "HEALTHCARE",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "SUNPHARMA"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500156"
+      }
+    ]
+  },
+  {
+    "ticker": "LT",
+    "isin": "INE909X01099",
+    "name": "Larsen & Toubro Ltd",
+    "asset_class": "EQUITY",
+    "sector": "INDUSTRIALS",
+    "attributes": {
+      "face_value": 2,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "LT"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500163"
+      }
+    ]
+  },
+  {
+    "ticker": "NIFTYBEES",
+    "isin": "INE910X01109",
+    "name": "Nifty 50 ETF",
+    "asset_class": "ETF",
+    "sector": "INDEX",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "NIFTYBEES"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500170"
+      }
+    ]
+  },
+  {
+    "ticker": "BANKBEES",
+    "isin": "INE911X01119",
+    "name": "Bank Nifty ETF",
+    "asset_class": "ETF",
+    "sector": "INDEX",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "BANKBEES"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500177"
+      }
+    ]
+  },
+  {
+    "ticker": "GOLDBEES",
+    "isin": "INE912X01129",
+    "name": "Gold ETF",
+    "asset_class": "ETF",
+    "sector": "COMMODITY",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "GOLDBEES"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500184"
+      }
+    ]
+  },
+  {
+    "ticker": "GSEC2033",
+    "isin": "INE913X01139",
+    "name": "GOI 7.18% 2033",
+    "asset_class": "BOND",
+    "sector": "SOVEREIGN",
+    "attributes": {
+      "face_value": 100,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "GSEC2033"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500191"
+      }
+    ]
+  },
+  {
+    "ticker": "LIQUIDBEES",
+    "isin": "INE914X01149",
+    "name": "Liquid ETF",
+    "asset_class": "ETF",
+    "sector": "CASH_EQUIVALENT",
+    "attributes": {
+      "face_value": 1,
+      "currency": "INR",
+      "lot_size": 1
+    },
+    "listings": [
+      {
+        "exchange": "NSE",
+        "symbol": "LIQUIDBEES"
+      },
+      {
+        "exchange": "BSE",
+        "symbol": "500198"
+      }
+    ]
+  }
+]

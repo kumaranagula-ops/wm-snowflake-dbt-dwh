@@ -1,0 +1,9 @@
+advisor_id,first_name,last_name,designation,branch_id,email,joined_date
+201,Neha,Kulkarni,RELATIONSHIP MANAGER,10,neha.kulkarni@wm-example.in,2015-01-01
+202,Vikram,Joshi,SENIOR RELATIONSHIP MANAGER,10,vikram.joshi@wm-example.in,2016-02-01
+203,Priya,Raman,WEALTH MANAGER,20,priya.raman@wm-example.in,2017-03-01
+204,Arjun,Hegde,RELATIONSHIP MANAGER,20,arjun.hegde@wm-example.in,2018-04-01
+205,Sanjay,Malhotra,SENIOR RELATIONSHIP MANAGER,30,sanjay.malhotra@wm-example.in,2019-05-01
+206,Pooja,Bansal,WEALTH MANAGER,30,pooja.bansal@wm-example.in,2020-06-01
+207,Lakshmi,Iyer,RELATIONSHIP MANAGER,40,lakshmi.iyer@wm-example.in,2015-07-01
+208,Karthik,Subramanian,SENIOR RELATIONSHIP MANAGER,40,karthik.subramanian@wm-example.in,2016-08-01

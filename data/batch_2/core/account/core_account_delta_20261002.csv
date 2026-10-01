@@ -1,0 +1,4 @@
+account_id,client_id,account_type,currency,status,opened_date,closed_date,branch_id,updated_at
+50052,1003,ADVISORY,INR,ACTIVE,2026-09-29,,30,2026-09-29 18:00:00
+50053,1016,PMS,INR,ACTIVE,2026-09-29,,40,2026-09-29 18:00:00
+50015,1012,RETIREMENT,INR,CLOSED,2018-12-12,2026-10-01,40,2026-10-01 18:00:00
