@@ -1,0 +1,267 @@
+version: 2
+
+models:
+  # ============================================================ DIMENSIONS
+  - name: dim_date
+    description: Calendar dimension (GENERATOR), role-playing in every fact. date_key -1 = unknown / not reached.
+    columns:
+      - name: date_key
+        data_tests: [unique, not_null]
+
+  - name: dim_branch
+    description: Branch dimension; outrigger of DIM_ADVISOR and DIM_ACCOUNT (snowflaked branch of the model).
+    columns:
+      - name: branch_key
+        data_tests: [unique, not_null]
+
+  - name: dim_advisor
+    description: Relationship managers. FK to DIM_BRANCH (snowflake schema).
+    columns:
+      - name: advisor_key
+        data_tests: [unique, not_null]
+      - name: branch_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_branch'), field: branch_key}
+
+  - name: dim_client
+    description: SCD Type 2 client dimension (one row per version). client_key = version key, client_id = durable key.
+    columns:
+      - name: client_key
+        data_tests: [unique, not_null]
+      - name: client_id
+        data_tests: [not_null]
+      - name: is_current
+        data_tests: [not_null]
+
+  - name: dim_account
+    description: SCD Type 1 account dimension (status overwritten, no history).
+    columns:
+      - name: account_key
+        data_tests: [unique, not_null]
+      - name: branch_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_branch'), field: branch_key}
+
+  - name: dim_security
+    description: Securities from the JSON master. -1 = unknown ticker, -2 = not applicable (cash movement).
+    columns:
+      - name: security_key
+        data_tests: [unique, not_null]
+
+  - name: dim_transaction_type
+    description: From the ref_transaction_type seed. Directions turn quantities/amounts into signed measures.
+    columns:
+      - name: transaction_type_key
+        data_tests: [unique, not_null]
+
+  - name: dim_trade_profile
+    description: Junk dimension - every combination of channel, order_type, is_advised.
+    columns:
+      - name: trade_profile_key
+        data_tests: [unique, not_null]
+
+  # ============================================================ BRIDGE
+  - name: bridge_account_holder
+    description: Many-to-many accounts <-> clients with weighting factor ownership_share (sums to 1 per account).
+    columns:
+      - name: account_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_account'), field: account_key}
+      - name: ownership_share
+        data_tests:
+          - not_null
+          - sums_to_one:
+              arguments: {group_by: account_key}
+
+  # ============================================================ FACTS
+  - name: fact_transaction
+    description: Transaction fact. Grain = one trade / cash movement (txn_id). Incremental MERGE.
+    columns:
+      - name: txn_id
+        description: Degenerate dimension.
+        data_tests: [unique, not_null]
+      - name: trade_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: settle_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: account_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_account'), field: account_key}
+      - name: client_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_client'), field: client_key}
+      - name: advisor_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_advisor'), field: advisor_key}
+      - name: branch_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_branch'), field: branch_key}
+      - name: security_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_security'), field: security_key}
+      - name: transaction_type_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_transaction_type'), field: transaction_type_key}
+      - name: trade_profile_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_trade_profile'), field: trade_profile_key}
+
+  - name: fact_daily_position
+    description: Periodic snapshot fact. Grain = account x security x trading day. Semi-additive measures.
+    columns:
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: account_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_account'), field: account_key}
+      - name: security_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_security'), field: security_key}
+      - name: market_value
+        data_tests: [not_null]
+
+  - name: fact_client_aum_monthly
+    description: Aggregate fact. Grain = client x month-end. Joint accounts split by ownership_share.
+    columns:
+      - name: month_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: client_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_client'), field: client_key}
+      - name: advisor_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_advisor'), field: advisor_key}
+
+  - name: fact_account_onboarding
+    description: Accumulating snapshot fact. Grain = one account application, updated as milestones are reached.
+    columns:
+      - name: application_id
+        data_tests: [unique, not_null]
+      - name: client_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_client'), field: client_key}
+      - name: account_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_account'), field: account_key}
+      - name: applied_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: kyc_submitted_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: kyc_approved_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: account_opened_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: first_funded_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: rejected_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: current_stage
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['APPLIED', 'KYC_SUBMITTED', 'KYC_APPROVED', 'ACCOUNT_OPENED', 'FUNDED', 'REJECTED']}
+
+  - name: fact_advisor_meeting
+    description: Factless fact (event). Grain = one client-advisor meeting.
+    columns:
+      - name: meeting_id
+        data_tests: [unique, not_null]
+      - name: meeting_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: client_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_client'), field: client_key}
+      - name: advisor_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_advisor'), field: advisor_key}
+
+  - name: fact_advisor_coverage
+    description: Factless fact (coverage). Grain = advisor x client x month.
+    columns:
+      - name: month_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_date'), field: date_key}
+      - name: client_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_client'), field: client_key}
+      - name: advisor_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('dim_advisor'), field: advisor_key}
+
+  # ============================================================ SHARE
+  - name: share_client_aum_monthly
+    description: Secure view published through Snowflake Secure Data Sharing. No PII.

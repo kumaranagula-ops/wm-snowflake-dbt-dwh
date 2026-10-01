@@ -1,0 +1,51 @@
+version: 2
+
+sources:
+  - name: raw
+    description: >
+      Landing tables loaded natively by Snowflake (COPY INTO via UTIL.SP_LOAD_SOURCE, run by the
+      UTIL.TSK_EOD_ROOT task graph, or Snowpipe). dbt never writes here. Every column is VARCHAR
+      (or VARIANT for JSON) and every row carries _source_file / _batch_id / _loaded_at.
+    database: "{{ target.database }}"
+    schema: RAW
+    loader: "Snowflake COPY INTO (UTIL.SP_LOAD_SOURCE)"
+    config:
+      loaded_at_field: _loaded_at
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 72, period: hour}
+    tables:
+      - name: crm_branch
+        description: CRM branch extract.
+        config: {freshness: null}
+      - name: crm_advisor
+        description: CRM relationship managers.
+        config: {freshness: null}
+      - name: crm_client
+        description: Client master. Full extract first, then delta files; append-only so a client can appear many times.
+      - name: crm_meeting
+        description: Client-advisor meetings, one NDJSON object per row in PAYLOAD (VARIANT).
+      - name: core_account
+        description: Accounts from the core banking system (full + delta, append-only).
+      - name: core_account_holder
+        description: Account ownership; joint accounts have several holders with ownership_pct.
+      - name: core_application_event
+        description: Account-opening workflow events (APPLIED, KYC_SUBMITTED, KYC_APPROVED, ACCOUNT_OPENED, REJECTED).
+      - name: oms_transaction
+        description: Trades and cash movements from the order management system. Contains a duplicate, a dirty side value and an unknown ticker on purpose.
+      - name: mkt_security
+        description: Security master, one JSON object per row in PAYLOAD with nested listings[].
+        config: {freshness: null}
+      - name: mkt_price
+        description: Daily OHLC prices.
+
+  - name: cntl
+    description: Native control tables (snowflake/core/02_control_tables.sql). dbt writes run logs here via hooks.
+    database: "{{ target.database }}"
+    schema: CNTL
+    tables:
+      - name: cntl_source_config
+      - name: cntl_batch_run
+      - name: cntl_file_load_audit
+      - name: cntl_watermark
+      - name: cntl_dq_result

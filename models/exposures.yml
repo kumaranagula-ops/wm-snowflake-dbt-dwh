@@ -1,0 +1,22 @@
+version: 2
+exposures:
+  - name: advisor_book_dashboard
+    label: Advisor book of business
+    type: dashboard
+    maturity: medium
+    description: Monthly AUM, meetings and coverage per advisor (example consumer, shows lineage end-to-end in dbt docs).
+    owner: {name: Kumara, email: data-team@example.com}
+    depends_on:
+      - ref('fact_client_aum_monthly')
+      - ref('fact_advisor_meeting')
+      - ref('fact_advisor_coverage')
+      - ref('dim_advisor')
+      - ref('dim_client')
+  - name: risk_team_data_share
+    label: Group risk team (Snowflake share)
+    type: application
+    maturity: medium
+    description: Consumer account reading SHARE.SHARE_CLIENT_AUM_MONTHLY through Secure Data Sharing.
+    owner: {name: Kumara, email: data-team@example.com}
+    depends_on:
+      - ref('share_client_aum_monthly')

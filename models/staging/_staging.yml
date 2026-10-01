@@ -1,0 +1,110 @@
+version: 2
+
+models:
+  # ---------------------------------------------------------------- CRM
+  - name: stg_crm__branch
+    description: Latest version of each branch.
+    columns:
+      - name: branch_id
+        data_tests: [unique, not_null]
+
+  - name: stg_crm__advisor
+    columns:
+      - name: advisor_id
+        data_tests: [unique, not_null]
+      - name: branch_id
+        data_tests:
+          - relationships:
+              arguments: {to: ref('stg_crm__branch'), field: branch_id}
+
+  - name: stg_crm__client
+    description: Latest version of each client (cleaned casing / whitespace).
+    columns:
+      - name: client_id
+        data_tests: [unique, not_null]
+      - name: risk_profile
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['CONSERVATIVE', 'MODERATE', 'AGGRESSIVE']}
+      - name: segment
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['RETAIL', 'HNI', 'UHNI']}
+      - name: primary_advisor_id
+        data_tests:
+          - relationships:
+              arguments: {to: ref('stg_crm__advisor'), field: advisor_id}
+
+  - name: stg_crm__meeting
+    columns:
+      - name: meeting_id
+        data_tests: [unique, not_null]
+      - name: meeting_channel
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['IN_PERSON', 'VIDEO', 'PHONE']}
+
+  - name: stg_crm__meeting_topic
+    description: Meeting topics exploded from the JSON array with LATERAL FLATTEN.
+
+  # ---------------------------------------------------------------- CORE
+  - name: stg_core__account
+    columns:
+      - name: account_id
+        data_tests: [unique, not_null]
+      - name: account_status
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['ACTIVE', 'CLOSED']}
+
+  - name: stg_core__account_holder
+    columns:
+      - name: holder_role
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['PRIMARY', 'JOINT']}
+      - name: ownership_share
+        data_tests:
+          - sums_to_one:
+              arguments: {group_by: account_id}
+
+  - name: stg_core__application_event
+    columns:
+      - name: event_type
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['APPLIED', 'KYC_SUBMITTED', 'KYC_APPROVED', 'ACCOUNT_OPENED', 'REJECTED']}
+
+  # ---------------------------------------------------------------- OMS
+  - name: stg_oms__transaction
+    description: Deduplicated, typed trade + cash feed.
+    columns:
+      - name: txn_id
+        data_tests: [unique, not_null]
+      - name: txn_type_code
+        data_tests:
+          - relationships:
+              arguments: {to: ref('ref_transaction_type'), field: txn_type_code}
+      - name: account_id
+        data_tests:
+          - relationships:
+              arguments: {to: ref('stg_core__account'), field: account_id}
+      - name: ticker
+        description: Can reference a ticker missing from the security master (late-arriving dimension).
+        data_tests:
+          - relationships:
+              arguments: {to: ref('stg_mkt__security'), field: ticker}
+              config: {severity: warn}
+      - name: quantity
+        data_tests: [not_negative]
+
+  # ---------------------------------------------------------------- MKT
+  - name: stg_mkt__security
+    columns:
+      - name: ticker
+        data_tests: [unique, not_null]
+
+  - name: stg_mkt__price
+    columns:
+      - name: close_price
+        data_tests: [not_null, not_negative]

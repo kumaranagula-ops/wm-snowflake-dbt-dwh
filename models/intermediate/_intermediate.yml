@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: int_account_primary_holder
+    description: One primary client per account (transient table).
+    columns:
+      - name: account_id
+        data_tests: [unique, not_null]
+      - name: client_id
+        data_tests: [not_null]
+  - name: int_application_milestones
+    description: Workflow events pivoted to one row per application.
+    columns:
+      - name: application_id
+        data_tests: [unique, not_null]
+  - name: int_month_end_dates
+    description: Last trading day per month.
