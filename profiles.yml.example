@@ -10,7 +10,7 @@ wm_micro:
       private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH', '~/.snowflake/rsa_key.p8') }}"
       private_key_passphrase: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PASSPHRASE', '') }}"
       role: WM_TRANSFORMER
-      warehouse: WM_WH
+      warehouse: WM_TRANSFORM_WH
       database: WM_MICRO
       schema: DEV
       threads: 4

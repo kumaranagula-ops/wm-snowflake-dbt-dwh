@@ -1,5 +1,8 @@
 name: dbt-snowflake
 
+# Assumes the native Snowflake layer (snowflake/core/00-08) is already set up and RAW is loaded.
+# dbt only transforms; loading is done by Snowflake itself (task graph / Snowpipe).
+
 on:
   pull_request:
     branches: [main]
@@ -15,7 +18,7 @@ env:
 
 jobs:
   ci:
-    # PR -> build everything into an isolated CI_<pr> schema set, test, then drop it
+    # Pull request -> build + test everything in throw-away CI_<pr>_* schemas, then drop them
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     env:
@@ -30,13 +33,14 @@ jobs:
           printf '%s\n' "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > rsa_key.p8
           chmod 600 rsa_key.p8
       - run: dbt debug --target ci
+      - run: dbt source freshness --target ci || true      # report only
       - run: dbt build --target ci
       - name: Drop CI schemas
         if: always()
         run: dbt run-operation drop_schemas_with_prefix --args "{prefix: $DBT_CI_SCHEMA}" --target ci
 
   prod:
-    # merge to main (or manual run) -> build into PROD schemas
+    # Merge to main (or manual run) -> build into STAGING / SNAPSHOTS / MARTS / SHARE
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
@@ -48,6 +52,5 @@ jobs:
         run: |
           printf '%s\n' "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > rsa_key.p8
           chmod 600 rsa_key.p8
-      - run: dbt seed --target prod
-      - run: dbt snapshot --target prod
-      - run: dbt build --target prod --exclude resource_type:seed resource_type:snapshot
+      - run: dbt build --target prod
+      - run: dbt docs generate --target prod
