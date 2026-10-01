@@ -1,0 +1,13 @@
+version: 2
+seeds:
+  - name: ref_transaction_type
+    description: >
+      Static reference data owned by the data team (not by a source system). Seeds are for
+      small lookup tables like this - never for loading real source data.
+    config:
+      column_types:
+        position_direction: number(2,0)
+        cash_direction: number(2,0)
+    columns:
+      - name: txn_type_code
+        data_tests: [unique, not_null]

@@ -1,0 +1,7 @@
+txn_type_code,txn_type_name,txn_category,position_direction,cash_direction,description
+BUY,Buy,TRADE,1,-1,Purchase of a security; cash goes out
+SELL,Sell,TRADE,-1,1,Sale of a security; cash comes in
+DIVIDEND,Dividend,INCOME,0,1,Dividend credited for a held security
+DEPOSIT,Deposit,CASH,0,1,Client adds money to the account
+WITHDRAWAL,Withdrawal,CASH,0,-1,Client takes money out
+FEE,Advisory fee,FEE,0,-1,Monthly advisory / PMS fee

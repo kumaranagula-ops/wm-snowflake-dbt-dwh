@@ -1,5 +1,5 @@
 name: wm_micro
-version: "1.0.0"
+version: "2.0.0"
 config-version: 2
 require-dbt-version: [">=1.10.0", "<2.0.0"]
 profile: wm_micro
@@ -14,24 +14,45 @@ target-path: "target"
 clean-targets: ["target", "dbt_packages"]
 
 vars:
-  # incremental lookback window (days) for late-arriving transactions
-  lookback_days: 3
+  lookback_hours: 6            # incremental safety window on _loaded_at (re-merges late/corrected rows)
+  cntl_schema: CNTL            # where the native CNTL_* control tables live
+  cntl_logging: true           # write every dbt run + test result into CNTL tables
+  enable_governance: false     # true -> tag PII columns + row access policy (Enterprise, run labs/L09 first)
+
+# ---- operational logging into the Snowflake control tables -----------------------
+on-run-start:
+  - "{{ cntl_log_run_start() }}"
+on-run-end:
+  - "{{ cntl_log_run_end(results) }}"
 
 seeds:
   wm_micro:
-    +schema: raw
+    +schema: ref
     +quote_columns: false
-
-models:
-  wm_micro:
-    staging:
-      +schema: staging
-      +materialized: view
-    marts:
-      +schema: marts
-      +materialized: table
-      +transient: false
 
 snapshots:
   wm_micro:
-    +schema: snapshots        # dbt >= 1.9: honours generate_schema_name (DEV_SNAPSHOTS, CI_x_SNAPSHOTS, SNAPSHOTS)
+    +schema: snapshots
+
+models:
+  wm_micro:
+    +copy_grants: true                       # keep grants when dbt does CREATE OR REPLACE
+    staging:
+      +schema: staging
+      +materialized: view
+    intermediate:
+      +schema: intermediate
+      +materialized: table
+      +transient: true                       # re-creatable work tables: no Fail-safe cost
+    marts:
+      +schema: marts
+      +materialized: table
+      +transient: false                      # permanent: Time Travel + Fail-safe
+      +grants:
+        select: ["WM_ANALYST"]
+    share:
+      +schema: share
+      +materialized: view
+      +secure: true                          # only secure views can be shared
+      +grants:
+        select: ["WM_ANALYST"]
