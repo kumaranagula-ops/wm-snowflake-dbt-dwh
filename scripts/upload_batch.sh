@@ -15,9 +15,9 @@ CONN_ARGS=()
 
 find "$SRC" -type f | sed "s#^$SRC/##" | xargs -n1 dirname | sort -u | while read -r rel; do
   echo ">> PUT $rel"
-  snow sql "${CONN_ARGS[@]}" -q \
+  snow sql ${CONN_ARGS[@]+"${CONN_ARGS[@]}"} -q \
     "PUT 'file://$SRC/$rel/*' @WM_MICRO.UTIL.STG_LANDING/$rel/ AUTO_COMPRESS = TRUE OVERWRITE = FALSE"
 done
 
-snow sql "${CONN_ARGS[@]}" -q "ALTER STAGE WM_MICRO.UTIL.STG_LANDING REFRESH"
-snow sql "${CONN_ARGS[@]}" -q "LIST @WM_MICRO.UTIL.STG_LANDING"
+snow sql ${CONN_ARGS[@]+"${CONN_ARGS[@]}"} -q "ALTER STAGE WM_MICRO.UTIL.STG_LANDING REFRESH"
+snow sql ${CONN_ARGS[@]+"${CONN_ARGS[@]}"} -q "LIST @WM_MICRO.UTIL.STG_LANDING"
