@@ -1,0 +1,26 @@
+# Used only by GitHub Actions (--profiles-dir ci). All secrets come from env vars.
+wm_micro:
+  target: ci
+  outputs:
+    ci:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH') }}"
+      role: WM_TRANSFORMER
+      warehouse: WM_TRANSFORM_WH
+      database: WM_MICRO
+      schema: "{{ env_var('DBT_CI_SCHEMA', 'CI') }}"
+      threads: 4
+      query_tag: dbt_wm_micro_ci
+    prod:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH') }}"
+      role: WM_TRANSFORMER
+      warehouse: WM_TRANSFORM_WH
+      database: WM_MICRO
+      schema: PROD
+      threads: 4
+      query_tag: dbt_wm_micro_prod

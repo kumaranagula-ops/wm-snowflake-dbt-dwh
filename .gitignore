@@ -2,6 +2,7 @@ target/
 dbt_packages/
 logs/
 profiles.yml
+!ci/profiles.yml
 .user.yml
 *.p8
 *.pem
