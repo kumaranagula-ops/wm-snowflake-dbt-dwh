@@ -13,4 +13,9 @@ models:
       - name: application_id
         data_tests: [unique, not_null]
   - name: int_month_end_dates
-    description: Last trading day per month.
+    description: Last trading day per month (current month = month-to-date). One row per month.
+    columns:
+      - name: month_start_date
+        data_tests: [unique, not_null]
+      - name: month_end_trading_date
+        data_tests: [not_null]

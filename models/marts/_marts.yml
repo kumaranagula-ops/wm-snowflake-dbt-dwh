@@ -265,3 +265,15 @@ models:
   # ============================================================ SHARE
   - name: share_client_aum_monthly
     description: Secure view published through Snowflake Secure Data Sharing. No PII.
+    data_tests:
+      - unique:
+          arguments: {column_name: "client_id || '-' || month_end_date"}
+    columns:
+      - name: month_end_date
+        data_tests: [not_null]
+      - name: client_id
+        data_tests: [not_null]
+      - name: segment
+        data_tests:
+          - accepted_values:
+              arguments: {values: ['RETAIL', 'HNI', 'UHNI']}

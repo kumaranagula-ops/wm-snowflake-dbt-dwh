@@ -9,6 +9,7 @@ models:
         data_tests: [unique, not_null]
 
   - name: stg_crm__advisor
+    description: Latest version of each advisor; first and last name combined into advisor_name.
     columns:
       - name: advisor_id
         data_tests: [unique, not_null]
@@ -36,6 +37,7 @@ models:
               arguments: {to: ref('stg_crm__advisor'), field: advisor_id}
 
   - name: stg_crm__meeting
+    description: One row per CRM meeting, parsed from NDJSON. topics is kept as an ARRAY for stg_crm__meeting_topic.
     columns:
       - name: meeting_id
         data_tests: [unique, not_null]
@@ -46,9 +48,21 @@ models:
 
   - name: stg_crm__meeting_topic
     description: Meeting topics exploded from the JSON array with LATERAL FLATTEN.
+    data_tests:
+      - unique:
+          arguments: {column_name: "meeting_id || '-' || topic_seq"}
+    columns:
+      - name: meeting_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: ref('stg_crm__meeting'), field: meeting_id}
+      - name: topic
+        data_tests: [not_null]
 
   # ---------------------------------------------------------------- CORE
   - name: stg_core__account
+    description: Latest version of each account (deduplicated on updated_at) with typed dates and upper-cased codes.
     columns:
       - name: account_id
         data_tests: [unique, not_null]
@@ -58,6 +72,7 @@ models:
               arguments: {values: ['ACTIVE', 'CLOSED']}
 
   - name: stg_core__account_holder
+    description: Account-to-client ownership. ownership_pct converted to a 0-1 share; joint accounts have one row per holder.
     columns:
       - name: holder_role
         data_tests:
@@ -69,6 +84,7 @@ models:
               arguments: {group_by: account_id}
 
   - name: stg_core__application_event
+    description: Account-opening workflow events. One row per application and event type.
     columns:
       - name: event_type
         data_tests:
@@ -100,11 +116,13 @@ models:
 
   # ---------------------------------------------------------------- MKT
   - name: stg_mkt__security
+    description: Security master from JSON. Nested attributes flattened, NSE/BSE listings pivoted to columns. One row per ticker.
     columns:
       - name: ticker
         data_tests: [unique, not_null]
 
   - name: stg_mkt__price
+    description: Daily OHLCV prices. One row per ticker and price date.
     columns:
       - name: close_price
         data_tests: [not_null, not_negative]
